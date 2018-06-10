@@ -1,0 +1,270 @@
+// colors
+$bg-color: radial-gradient(circle, lighten(#3785ac, 10%), darken(#166b8f, 10%));
+$logo-color: #058fbc;
+$logo-border-color: #ffffff;
+$circle-color: #ffffff;
+
+// mixins
+@mixin center {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+
+@mixin pseudo($position: absolute, $content: "") {
+    content: $content;
+    position: $position;
+}
+
+html, body{
+  width: 100%;
+  height: 100%;
+}
+
+body{
+  background: $bg-color;
+  overflow: hidden;
+}
+
+.logo{
+  @include center;
+  width: 61vmin;
+  height: 61vmin;
+  border: 2vmin solid $logo-border-color;
+  border-radius: 50%;
+  background: $logo-color;
+
+  .circle{
+    @include center;
+    width: 52vmin;
+    height: 52vmin;
+    border-radius: 50%;
+    overflow: hidden;
+    background: $circle-color;
+
+    .left-shape{
+      .line-top{
+        @include center;
+        top: -26.5vmin;
+        left: -29.2vmin;
+        width: 5vmin;
+        height: 2.1vmin;
+        border-top-right-radius: 1vmin;
+        border-bottom-right-radius: 1vmin;
+        background: $logo-color;
+        transform: rotate(-4deg);
+
+        &:before{
+          @include pseudo;
+          top: -0.1vmin;
+          left: -8vmin;
+          width: 8vmin;
+          height: 3vmin;
+          background: $logo-color;
+          transform: rotate(2deg);
+        }
+      }
+
+      .line-bottom{
+        @include center;
+        top: 11vmin;
+        z-index: 2;
+        left: -28.2vmin;
+        width: 7vmin;
+        height: 38.5vmin;
+        background: $logo-color;
+        border-bottom-right-radius: 10vmin;
+        transform: rotate(-20.5deg);
+
+        &:before{
+          @include pseudo;
+          left: 4.3vmin;
+          width: 3vmin;
+          height: 33vmin;
+          background: $logo-color;
+          transform: rotate(1.2deg);
+        }
+
+        &:after{
+          @include pseudo;
+          top: 14.5vmin;
+          left: 9vmin;
+          width: 2vmin;
+          height: 30vmin;
+          background: $logo-color;
+          transform: rotate(40deg);
+        }
+      }
+    }
+
+    .right-shape{
+
+      .line-top{
+        @include center;
+        z-index: 2;
+        top: -26.5vmin;
+        left: 10.8vmin;
+        width: 5vmin;
+        height: 2.1vmin;
+        border-top-right-radius: 1vmin;
+        border-bottom-right-radius: 1vmin;
+        background: $logo-color;
+        transform: rotate(-4deg);
+
+        &:before{
+          @include pseudo;
+          top: -0.1vmin;
+          left: -7.23vmin;
+          width: 7.5vmin;
+          height: 3vmin;
+          background: $logo-color;
+          transform: rotate(2deg);
+        }
+      }
+
+      .line-top-2{
+        @include center;
+        top: -26vmin;
+        left: -2.5vmin;
+        width: 6.8vmin;
+        height: 2.1vmin;
+        background: $logo-color;
+        transform: rotate(0deg);
+
+        &:before{
+          @include pseudo;
+          top: 0.1vmin;
+          left: -0.25vmin;
+          width: 1vmin;
+          height: 2.8vmin;
+          background: $logo-color;
+          transform: rotate(-20deg);
+        }
+
+        &:after{
+          @include pseudo;
+          top: -0.1vmin;
+          left: -3.9vmin;
+          width: 5vmin;
+          height: 2.1vmin;
+          border-top-left-radius: 1vmin;
+          border-bottom-left-radius: 1vmin;
+          background: $logo-color;
+          transform: rotate(4deg);
+        }
+      }
+
+      .line-bottom{
+        @include center;
+        z-index: 2;
+        top: 11vmin;
+        left: 11vmin;
+        width: 7vmin;
+        height: 38.5vmin;
+        background: $logo-color;
+        border-bottom-right-radius: 10vmin;
+        transform: rotate(-20.5deg);
+
+        &:before{
+          @include pseudo;
+          left: 4.3vmin;
+          width: 3vmin;
+          height: 33vmin;
+          background: $logo-color;
+          transform: rotate(1.2deg);
+        }
+
+        &:after{
+          @include pseudo;
+          top: 14.5vmin;
+          left: 9vmin;
+          width: 2.5vmin;
+          height: 30vmin;
+          background: $logo-color;
+          transform: rotate(40deg);
+        }
+      }
+
+      .line-bottom-2{
+        @include center;
+        z-index: 2;
+        top: 11vmin;
+        left: 33.8vmin;
+        width: 1vmin;
+        height: 10vmin;
+        background: $logo-color;
+        border-bottom-right-radius: 10vmin;
+        transform: rotate(17deg);
+      }
+
+      .round-shape{
+        @include center;
+        top: -13vmin;
+        left: 43vmin;
+        width: 3vmin;
+        height: 15vmin;
+        border-top-right-radius: 50%;
+        border-bottom-right-radius: 50%;
+        background: $logo-color;
+        transform: rotate(10deg);
+
+        &:before{
+          @include pseudo;
+          top: -4vmin;
+          left: -8vmin;
+          width: 10vmin;
+          height: 10vmin;
+          background: $logo-color;
+          border-bottom-left-radius: 5vmin;
+          border-top-left-radius: 5vmin;
+          transform: rotate(45deg);
+        }
+
+        &:after{
+          @include pseudo;
+          top:  5vmin;
+          left: -5vmin;
+          width: 6vmin;
+          height: 12vmin;
+          background: $logo-color;
+          transform: rotate(-5deg);
+        }
+      }
+
+      .round-shape-2{
+        @include center;
+        top: -2vmin;
+        left: 15.9vmin;
+        z-index: 1;
+        width: 20vmin;
+        height: 20vmin;
+        background: $circle-color;
+        border-radius: 50%;
+
+        &:before{
+          @include pseudo;
+          top: -1.3vmin;
+          left: -0.3vmin;
+          width: 20vmin;
+          height: 20vmin;
+          background: $circle-color;
+          border-radius: 50%;
+        }
+
+        &:after{
+          @include pseudo;
+          top: -2.2vmin;
+          left: -0.83vmin;
+          width: 20vmin;
+          height: 20vmin;
+          background: $circle-color;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+
+}
